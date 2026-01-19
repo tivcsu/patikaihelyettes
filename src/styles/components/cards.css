@@ -1,0 +1,423 @@
+/*
+ * Design System - Card Components
+ */
+
+.card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-6);
+  transition: all var(--transition-slow);
+}
+
+.card-hoverable:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: transparent;
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-card);
+  border: none;
+}
+
+/* Step Card */
+.step-card {
+  text-align: center;
+  padding: var(--spacing-10) var(--spacing-8);
+  background: var(--color-background);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-slow);
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.step-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: var(--spacing-6);
+}
+
+.step-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-2xl);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.step-number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.step-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-foreground);
+}
+
+.step-description {
+  color: var(--color-muted-foreground);
+  line-height: var(--line-height-loose);
+  font-size: var(--font-size-sm);
+}
+
+/* Ad Card */
+.ad-card {
+  padding: var(--spacing-6);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  transition: all var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: transparent;
+}
+
+.ad-card-header {
+  margin-bottom: var(--spacing-4);
+}
+
+.ad-badge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  background: var(--gradient-secondary);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ad-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-foreground);
+  line-height: var(--line-height-snug);
+}
+
+.ad-pharmacy {
+  color: var(--color-muted-foreground);
+  margin-bottom: var(--spacing-4);
+  font-weight: var(--font-weight-medium);
+}
+
+.ad-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+}
+
+.ad-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-sm);
+}
+
+.ad-meta-item svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.ad-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  margin-top: auto;
+  padding-top: var(--spacing-4);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  transition: gap var(--transition-fast);
+  border-top: 1px solid var(--color-muted);
+}
+
+.ad-link:hover {
+  gap: var(--spacing-2);
+}
+
+/* Benefits Card */
+.benefits-card {
+  background: var(--color-background);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-slow);
+}
+
+.benefits-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.benefits-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-5);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.benefits-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefits-card-icon.substitute {
+  background: var(--gradient-secondary);
+}
+
+.benefits-card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.benefits-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.benefits-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+.benefit-item {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.benefit-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-item-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.benefit-item-content {
+  flex: 1;
+}
+
+.benefit-item-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-1);
+}
+
+.benefit-item-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted-foreground);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Legacy benefits list styles (can be removed if not used elsewhere) */
+.benefits-list {
+  list-style: none;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-muted-foreground);
+  border-bottom: 1px solid var(--color-muted);
+}
+
+.benefits-list li:last-child {
+  border-bottom: none;
+}
+
+.benefit-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  background: var(--color-muted);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Type Selection Card */
+.type-card {
+  padding: var(--spacing-8) var(--spacing-6);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-background);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.type-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.type-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-4);
+}
+
+.type-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.type-icon-pharmacy {
+  background: var(--color-primary-100);
+  color: var(--color-primary);
+}
+
+.type-icon-substitute {
+  background: var(--color-secondary-100);
+  color: var(--color-secondary);
+}
+
+.type-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  background: var(--color-muted);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-4);
+}
+
+.type-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.type-card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground);
+  margin-bottom: var(--spacing-2);
+}
+
+.type-card p {
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-sm);
+}
+
+/* Ad Card Skeleton Loading */
+.ad-card-skeleton {
+  min-height: 220px;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-muted) 25%,
+    var(--color-gray-200) 50%,
+    var(--color-muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-badge {
+  width: 100px;
+  height: 24px;
+  margin-bottom: var(--spacing-4);
+}
+
+.skeleton-title {
+  width: 80%;
+  height: 24px;
+  margin-bottom: var(--spacing-2);
+}
+
+.skeleton-text {
+  width: 60%;
+  height: 16px;
+  margin-bottom: var(--spacing-4);
+}
+
+.skeleton-meta {
+  width: 100%;
+  height: 40px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

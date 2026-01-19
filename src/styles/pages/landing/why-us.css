@@ -1,0 +1,44 @@
+/*
+ * Landing Page - Why Us Section
+ */
+
+.why-us-section {
+  background: linear-gradient(
+    180deg,
+    var(--color-muted) 0%,
+    var(--color-background) 100%
+  );
+}
+
+.benefits-container {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-12);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-8);
+}
+
+@media (max-width: 700px) {
+  .benefits-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-us-tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-muted-foreground);
+  padding: var(--spacing-5) var(--spacing-8);
+  background: var(--color-muted);
+  border-radius: var(--radius-full);
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.why-us-tagline svg {
+  color: var(--color-primary);
+}

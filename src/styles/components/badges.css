@@ -1,0 +1,90 @@
+/*
+ * Design System - Badge Components
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.badge-primary {
+  background-color: rgba(5, 150, 105, 0.1);
+  color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-primary {
+    color: white;
+  }
+}
+
+.badge-secondary {
+  background-color: rgba(2, 132, 199, 0.1);
+  color: var(--color-secondary);
+}
+
+.badge-success {
+  background-color: rgba(5, 150, 105, 0.1);
+  color: var(--color-success);
+}
+
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+.badge-error {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: var(--color-error);
+}
+
+.badge-gradient {
+  background: var(--gradient-secondary);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-1) var(--spacing-3);
+}
+
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-5);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.hero-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Tagline Badge */
+.tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-muted-foreground);
+  padding: var(--spacing-5) var(--spacing-8);
+  background: var(--color-muted);
+  border-radius: var(--radius-full);
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+.tagline svg {
+  color: var(--color-primary);
+}

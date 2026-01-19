@@ -1,0 +1,11 @@
+/*
+ * Design System - Component Index
+ * Imports all component styles
+ */
+
+@import "./buttons.css";
+@import "./forms.css";
+@import "./cards.css";
+@import "./sections.css";
+@import "./badges.css";
+@import "./navbar.css";

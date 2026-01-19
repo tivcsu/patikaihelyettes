@@ -1,0 +1,10 @@
+/*
+ * Design System - Pages Index
+ * Imports all page-specific styles
+ */
+
+@import "./landing/index.css";
+@import "./auth.css";
+@import "./ads.css";
+@import "./dashboard.css";
+@import "./profile.css";

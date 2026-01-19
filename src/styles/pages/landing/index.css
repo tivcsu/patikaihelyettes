@@ -1,0 +1,16 @@
+/*
+ * Landing Page - Index
+ * Imports all landing page specific styles
+ */
+
+@import "./hero.css";
+@import "./how-it-works.css";
+@import "./latest-ads.css";
+@import "./why-us.css";
+@import "./footer-cta.css";
+
+/* Landing Page Container */
+.landing-page {
+  width: 100%;
+  overflow-x: hidden;
+}

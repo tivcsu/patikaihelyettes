@@ -1,0 +1,15 @@
+/*
+ * PatikaiHelyettes Design System
+ * Main entry point - imports all styles in correct order
+ * 
+ * Structure:
+ * 1. Design Tokens (variables)
+ * 2. Base styles (reset, typography)
+ * 3. Components (reusable UI elements)
+ * 4. Pages (page-specific styles)
+ */
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./components/index.css";
+@import "./pages/index.css";

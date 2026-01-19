@@ -1,0 +1,22 @@
+/*
+ * Landing Page - How It Works Section
+ */
+
+.how-it-works-section {
+  background-color: var(--color-muted);
+}
+
+.steps-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-8);
+}
+
+@media (max-width: 900px) {
+  .steps-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
