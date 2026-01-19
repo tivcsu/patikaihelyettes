@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { UserRole } from "@/types";
@@ -12,7 +12,7 @@ import { REGIONS } from "../constants/regions";
 
 type RegistrationStep = "select-type" | "credentials" | "profile";
 
-export default function RegisterPage() {
+function RegisterForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const initialType = searchParams.get("type") as
@@ -21,7 +21,7 @@ export default function RegisterPage() {
     | null;
 
   const [step, setStep] = useState<RegistrationStep>(
-    initialType ? "credentials" : "select-type"
+    initialType ? "credentials" : "select-type",
   );
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -29,8 +29,8 @@ export default function RegisterPage() {
     initialType === "pharmacy"
       ? "PHARMACY"
       : initialType === "substitute"
-      ? "SUBSTITUTE"
-      : null
+        ? "SUBSTITUTE"
+        : null,
   );
 
   // Credentials
@@ -74,7 +74,7 @@ export default function RegisterPage() {
   };
 
   const handlePharmacyChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setPharmacyProfile((prev) => ({ ...prev, [name]: value }));
@@ -83,7 +83,7 @@ export default function RegisterPage() {
   const handleSubstituteChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setSubstituteProfile((prev) => ({ ...prev, [name]: value }));
@@ -128,7 +128,7 @@ export default function RegisterPage() {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         credentials.email,
-        credentials.password
+        credentials.password,
       );
 
       // Create user document in Firestore
@@ -525,7 +525,7 @@ export default function RegisterPage() {
                     <input
                       type="checkbox"
                       checked={substituteProfile.availableRegions.includes(
-                        region
+                        region,
                       )}
                       onChange={() => handleRegionToggle(region)}
                     />
@@ -620,5 +620,27 @@ export default function RegisterPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="auth-page">
+          <div className="auth-container">
+            <div className="auth-header">
+              <Link href="/" className="auth-logo">
+                patikaihelyettes.hu
+              </Link>
+              <h1>Regisztráció</h1>
+              <p>Betöltés...</p>
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <RegisterForm />
+    </Suspense>
   );
 }
